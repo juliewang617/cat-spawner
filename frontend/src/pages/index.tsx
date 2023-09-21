@@ -1,6 +1,6 @@
 import {Button, Container, Stack, HStack, Spacer, Text, VStack, Flex} from "@chakra-ui/react"
 import { useEffect, useState } from "react";
-import NewPostModal from "@/components/NewPostModal";
+import NewCatModal from "@/components/NewCatModal";
 import Post from "@/components/Post";
 import axios from "axios";
 
@@ -23,7 +23,7 @@ export default function Home() {
 
   return (
     <div>
-      <NewPostModal
+      <NewCatModal
         isOpen={newPostDialog}
         onClose={() => setNewPostDialog(false)}
       />

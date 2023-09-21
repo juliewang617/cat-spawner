@@ -54,7 +54,7 @@ app.post("/posts", async (req, res) => {
   }
 });
 
-// Gets a given cat 
+// Gets a given cat
 app.get("/posts/:postID", async (req, res) => {
   const postID = req.params.postID;
   const collection = db.collection("posts");
@@ -66,7 +66,7 @@ app.get("/posts/:postID", async (req, res) => {
   }
 });
 
-// Deletes a cat 
+// Deletes a cat
 app.delete("/posts/:postId/delete", async (req, res) => {
   const postID = req.params.postId;
   const collection = db.collection("posts");

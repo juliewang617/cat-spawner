@@ -18,7 +18,7 @@ const Post = ({ title, body, image, likeCount, postId}: Props) => {
   const handleLikeClick = async () => {
     try {
       setLikes((prevLikes) => prevLikes + 1);
-      await axios.post(`http://localhost:8080/posts/${postId}/like`, {
+      await axios.patch(`http://localhost:8080/posts/${postId}/like`, {
         likeCount: likes
       })
       .then(response => console.log(response.data))
@@ -30,7 +30,7 @@ const Post = ({ title, body, image, likeCount, postId}: Props) => {
 
   const handleDelete = async () => {
     try {
-      const response = await axios.delete(`http://localhost:8080/posts/${postId}/delete`, );
+      await axios.delete(`http://localhost:8080/posts/${postId}/delete`);
     } catch (err) {
       console.error(err);
     }
@@ -57,6 +57,7 @@ const Post = ({ title, body, image, likeCount, postId}: Props) => {
             borderRadius="10px" />
         </Center>
         <HStack width="100%" margin="10px" bg="white">
+          <AiOutlineDelete size="30px" onClick={handleDelete}/>
           <AiOutlineHeart size="30px" onClick={handleLikeClick}/>
           <Text margin="-1" bg="white">{likes}</Text>
           <Text margin="2" bg="white" fontSize="m">{body}</Text >
