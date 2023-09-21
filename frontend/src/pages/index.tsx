@@ -43,14 +43,14 @@ export default function Home() {
           alignItems="center" 
           my={10}
           flexWrap="wrap">
-          {postLog.map((post) => (
+          {postLog.map((cat) => (
             <Post
-              key={post._id}
-              image={post.image}
-              title={post.title}
-              body={post.body}
-              likeCount={post.likeCount}
-              postId={post._Id}
+              key={cat._id}
+              image={cat.image}
+              title={cat.title}
+              body={cat.body}
+              likeCount={cat.likeCount}
+              postId={cat._id}
               />
           ))}
         </Flex>

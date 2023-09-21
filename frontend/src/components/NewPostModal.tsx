@@ -68,7 +68,7 @@ const NewPostModal = ({ isOpen, onClose }: Props) => {
 
   // TODO: Implement a modal for creating a new post
   return (
-    <Modal blockScrollOnMount={false} isOpen={isOpen} onClose={onClose}>
+    <Modal blockScrollOnMount={true} isOpen={isOpen} onClose={onClose}>
       <ModalOverlay />
       <form onSubmit={handleSubmit}>
         <ModalContent>
